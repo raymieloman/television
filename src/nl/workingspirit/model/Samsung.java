@@ -17,7 +17,12 @@ public class Samsung /* extends Object*/ implements  Television {
     }
 
     public int switchChannel(int newChannel) {
-        this.currentChannel = newChannel;
+        if (this.on) {
+            this.currentChannel = newChannel;
+        } else {
+            // throw some
+        }
+
 
         return this.currentChannel;
     }
