@@ -6,10 +6,13 @@ import nl.workingspirit.model.Pear;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws WorkingSpiritException {
         int a = 3;
         int b = 1;
 
+        // Handle or Declare
+        // Handle ::= try catch
+        // Declare :: throws
         System.out.println(divide(a, b));
 
 
@@ -33,6 +36,8 @@ public class App {
     }
 
     public static int divide(int a, int b) throws WorkingSpiritException {
+        Fruit f = null;
+        f.schillen();
         if (b != 0) {
             return a / b;
         } else {
