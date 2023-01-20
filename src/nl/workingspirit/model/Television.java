@@ -2,7 +2,9 @@ package nl.workingspirit.model;
 
 public interface Television {
 
-    /*public abstract */void on();
+    double vat = 0.21;
+
+    /*public abstract */void switchOn();
 
     void off();
 

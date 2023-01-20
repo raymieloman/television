@@ -1,11 +1,14 @@
 package nl.workingspirit.model;
 
-public class Samsung implements  Television {
+public class Samsung /* extends Object*/ implements  Television {
 
     private boolean on;
     private int currentChannel;
 
-    public void on() {
+    public void switchOn() {
+
+        System.out.println(Television.vat);
+        System.out.println(this.vat);
         this.on = true;
     }
 
@@ -17,5 +20,11 @@ public class Samsung implements  Television {
         this.currentChannel = newChannel;
 
         return this.currentChannel;
+    }
+
+    public void foo() {
+
+        super.toString();
+
     }
 }

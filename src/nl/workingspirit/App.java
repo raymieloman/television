@@ -9,5 +9,12 @@ public class App {
 
         Television tv = new Samsung();
 
+        // design smell
+        if (tv instanceof Samsung) {
+            Samsung samsung = (Samsung) tv;
+            samsung.foo();
+        }
+
     }
+
 }
