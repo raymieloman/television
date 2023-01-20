@@ -6,16 +6,16 @@ public class Samsung implements  Television {
     private int currentChannel;
 
     public void on() {
-
+        this.on = true;
     }
 
     public void off() {
-
+        this.on = false;
     }
 
     public int switchChannel(int newChannel) {
+        this.currentChannel = newChannel;
 
-
-        return 3;
+        return this.currentChannel;
     }
 }
