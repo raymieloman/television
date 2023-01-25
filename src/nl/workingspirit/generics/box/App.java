@@ -14,5 +14,8 @@ public class App{
         // vout
 //        televisionBox.add("Sander")
 
+        for (Television tv1 : televisionBox) {
+
+        }
     }
 }
