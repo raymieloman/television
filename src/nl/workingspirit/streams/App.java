@@ -16,7 +16,7 @@ public class App {
         numbers.add(5);
         numbers.add(26);
 
-        Integer n1= 3;
+        Integer n1 = 3;
         System.out.println(n1 % 2 == 0);
 
         numbers.addAll(Arrays.asList(13, 34, 55, 89, 144, 255, 8, 11));
@@ -47,20 +47,9 @@ public class App {
         numbers.stream()
                 .filter(n -> n  <10)
                 // This is the longer version of n -> n % 2 == 0
-                .filter(new MyEvenNumberPredicate<>())
+                .filter(new MyEvenNumberPredicate())
                 .map(n -> n * n)
                 .forEach(System.out::println);
     }
 }
 
-class MyEvenNumberPredicate<Integer> implements Predicate<Integer> {
-
-    @Override
-    public boolean test(Integer n) {
-        String aap = "3";
-//        Integer someInteger = 3+2;
-//        System.out.println(someInteger%2);
-
-        return  (int) n%2 == 0;
-    }
-}
