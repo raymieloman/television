@@ -1,10 +1,10 @@
 package nl.workingspirit.nio;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.*;
+import java.nio.file.attribute.FileAttribute;
+import java.nio.file.attribute.PosixFilePermissions;
 
 public class App {
 
@@ -17,10 +17,13 @@ public class App {
         }); 
 
 
-        Path p2 = Paths.get("newfilecreated.txt");
-        p2.toFile().createNewFile();
+        Path pathToOutputFile = Paths.get("newfilecreated.txt");
+        File file = pathToOutputFile.toFile();
+        if (file.exists()) {
+            file.delete();
+        }
+        Files.createFile(pathToOutputFile);
 
-        final Path pathToOutputFile = Paths.get("newfilecreated.txt");
 
         Files.lines(pathToInputFile).forEach(line -> {
             try {
@@ -29,7 +32,11 @@ public class App {
                 System.err.println("Die file bestaat niet");
             }
         });
-    }
 
-    // Assignment: The file 'newfilecreated.txt' should be cleaned every time
+        // create dir
+        String dir = "test1/test2/test3";
+        Path pathToDir = Paths.get(dir);
+        Files.createDirectories(pathToDir);
+        System.out.println("Directory should be created now!");
+    }
 }
