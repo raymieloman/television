@@ -1,0 +1,4 @@
+Design software
+staruml
+jdl studio https://start.jhipster.tech/jdl-studio/
+
