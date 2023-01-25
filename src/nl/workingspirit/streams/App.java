@@ -21,7 +21,7 @@ public class App {
 
         numbers.addAll(Arrays.asList(13, 34, 55, 89, 144, 255, 8, 11));
 
-        // Glen
+	// Create a list (again) from the stream
         List<Integer> lijst = numbers.stream().filter(n -> n%2 == 0).collect(Collectors.toList());
 
         // print all even numbers using the classic approach
